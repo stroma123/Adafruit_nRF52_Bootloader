@@ -65,3 +65,6 @@ TAGS
 
 .DS_Store
 Makefile.user
+
+# Python virtual environments
+.venv/

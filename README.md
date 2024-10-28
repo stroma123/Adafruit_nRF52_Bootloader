@@ -202,3 +202,22 @@ pip install intelhex
 
 Make sure that `nrfjprog` is available from the command-line. This binary is
 part of Nordic's nRF5x Command Line Tools.
+
+### Building for the IBM Model M
+
+Create a virtual environment and install necessary tools. Note, you may need to install Python `venv` packege first `sudo apt install python3-venv`:
+
+```bash
+  python3 -m venv .venv
+  source .venv/bin/activate
+  python3 -m pip install intelhex adafruit-nrfutil
+```
+
+Build the bootloader via:
+
+```bash
+make BOARD=modelm all
+```
+
+Flash the hex file WITH soft device to the chip. 
+For now that would be `_build/build-modelm/modelm_bootloader-2ffa12c-dirty_s140_6.1.1.hex`.

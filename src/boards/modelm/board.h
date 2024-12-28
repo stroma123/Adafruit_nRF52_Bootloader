@@ -38,8 +38,8 @@
 /* BUTTON
  *------------------------------------------------------------------*/
 #define BUTTONS_NUMBER      2 // 1 connected
-#define BUTTON_1          _PINNUM(0, 18)  // unusable: RESET
-#define BUTTON_2          _PINNUM(1, 1)   // DFU button, near the USB connector
+#define BUTTON_1          _PINNUM(1, 1)   // DFU button, near the USB connector
+#define BUTTON_2          _PINNUM(0, 18)  // FRST - nunusable, not connected to RESET pin
 #define BUTTON_PULL         NRF_GPIO_PIN_PULLUP
 
 //--------------------------------------------------------------------+

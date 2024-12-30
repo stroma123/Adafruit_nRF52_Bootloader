@@ -32,14 +32,17 @@
 /*------------------------------------------------------------------*/
 /* LED
  *------------------------------------------------------------------*/
-#define LEDS_NUMBER         0
+#define LEDS_NUMBER         2
+#define LED_PRIMARY_PIN     _PINNUM(0, 14)  // Caps lock
+#define LED_SECONDARY_PIN   _PINNUM(0, 26)  // Num lock
+#define LED_STATE_ON        0
 
 /*------------------------------------------------------------------*/
 /* BUTTON
  *------------------------------------------------------------------*/
-#define BUTTONS_NUMBER      2 // 1 connected
-#define BUTTON_1          _PINNUM(1, 1)   // DFU button, near the USB connector
-#define BUTTON_2          _PINNUM(0, 18)  // FRST - nunusable, not connected to RESET pin
+#define BUTTONS_NUMBER      2
+#define BUTTON_1            _PINNUM(1, 1)   // DFU button, near the USB connector
+#define BUTTON_2            _PINNUM(0, 21)  // ESC
 #define BUTTON_PULL         NRF_GPIO_PIN_PULLUP
 
 //--------------------------------------------------------------------+

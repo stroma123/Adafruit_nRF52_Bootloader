@@ -17,3 +17,25 @@ const uint32_t bootloaderConfig[] =
   0, 0, 0, 0, 0, 0, 0, 0
   /* CF2 END */
 };
+
+void board_init2(void)
+{
+  // configure P1.02 for ESC/BUTTON_2
+  // P1.02 --- / --- P0.21
+  //        sw(esc)
+  // mode: output, push-pull, low
+  nrf_gpio_cfg(
+    _PINNUM(1, 2),
+    NRF_GPIO_PIN_DIR_OUTPUT,
+    NRF_GPIO_PIN_INPUT_DISCONNECT,
+    NRF_GPIO_PIN_NOPULL,
+    NRF_GPIO_PIN_H0D1,
+    NRF_GPIO_PIN_NOSENSE
+  );
+  nrf_gpio_pin_write(_PINNUM(1, 2), 0);
+
+  // Wait the buttons stable.
+  // This is mandatory, or the keyboard will enter bootloader whenever
+  // booted by pressing the button at back (same with BUTTON_1)
+  NRFX_DELAY_MS(300);
+}

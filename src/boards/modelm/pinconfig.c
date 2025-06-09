@@ -37,5 +37,5 @@ void board_init2(void)
   // Wait the buttons stable.
   // This is mandatory, or the keyboard will enter bootloader whenever
   // booted by pressing the button at back (same with BUTTON_1)
-  NRFX_DELAY_MS(300);
+  NRFX_DELAY_MS(5);
 }
